@@ -1,3 +1,7 @@
+#------------------------
+# There are some errors
+#--------------------------
+
 from math import *
 
 size=int(input('enter size of grid:'))
