@@ -1,56 +1,44 @@
 # Marathon Winner
 
-Problem Description
-Race is generally organized by distance but this race will be organized by time.
-
+--> Problem Description
+-> Race is generally organized by distance but this race will be organized by time.
 In order to predict the winner we will check every 2 seconds.
-
 Let's say total race time is 7 seconds we will check for (7-1) seconds.
-
 For 7 sec : We will check who is leading at 2 sec, 4 sec and 6 sec.
-
 Participant who is leading more number of times is winner from prediction perspective.
 
-Now our task is to predict a winner in this marathon.
+-> Now our task is to predict a winner in this marathon.
 
-Note:
+-> Note:
+- 1) At particular time let say at 4th second, top two (top N, in general) participants are at same distance, then in this case both are leading we will increase count for both (all N).
+- 2) And after calculating at all time slices, if number of times someone is leading, is same for two or more participants, then one who come first in input sequence will be the winner.
 
-1)At particular time let say at 4th second, top two (top N, in general) participants are at same distance, then in this case both are leading we will increase count for both (all N).
+-> Ex: If participant 2 and 3 are both leading with same number, participant 2 will be the winner.
 
-2)And after calculating at all time slices, if number of times someone is leading, is same for two or more participants, then one who come first in input sequence will be the winner.
-
-Ex: If participant 2 and 3 are both leading with same number, participant 2 will be the winner.
-
-Constraints
+# Constraints
 1 <= T <= 100
 
 1 <= N <= 100
 
-Input Format
-First line contains a single integer N denoting the number of participants
+# Input Format
+- First line contains a single integer N denoting the number of participants
+- Second line contains a single integer T denoting the total time in seconds of this Marathon.
+- Next N lines (for each participant) are as follows :
+- We have T+1 integers separated by space.
+- First T integers are as follow:
+- ith integer denotes the number of steps taken by the participant at the ith second.
+- T+1st integer denotes the Distance (in meters) of each step.
 
-Second line contains a single integer T denoting the total time in seconds of this Marathon.
+# Output
+- Index of Marathon winner, where index starts with 1.
 
-Next N lines (for each participant) are as follows :
-
-We have T+1 integers separated by space.
-
-First T integers are as follow:
-
-ith integer denotes the number of steps taken by the participant at the ith second.
-
-T+1st integer denotes the Distance (in meters) of each step.
-
-Output
-Index of Marathon winner, where index starts with 1.
-
-Time Limit
+# Time Limit
 1
 
-Explanation
-Example 1
+# Explanation
+--> Example 1
 
-Input
+-> Input
 
 3
 
@@ -62,11 +50,11 @@ Input
 
 1 2 4 2 7 5 3 2 4
 
-Output
+-> Output
 
 2
 
-Explanation
+-> Explanation
 
 3 (No. of candidate)
 
@@ -102,7 +90,7 @@ At time 6 :Here 3rd marathoner is leading
 
 84
 
-Output:
+-> Output:
 
 2
 

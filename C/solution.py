@@ -13,7 +13,7 @@ N1000 = 0
 
 # user input
 N = int(input('Enter maximum withdrawal currency notes at a time: '))
-withdrawAmount = int(input('Amount you want to withdraw: '))
+withdrawAmount = int(input('Amount you want to withdraw (in multiples of 100): '))
 TN100 = int(input('Available currency note of Rs 100 in the ATM: '))
 TN200 = int(input('Available currency note of Rs 200 in the ATM: '))
 TN500 = int(input('Available currency note of Rs 500 in the ATM: '))
@@ -33,12 +33,15 @@ while withdrawAmount >= 100 and N100 <= TN100:
     N100 += 1
     withdrawAmount -= 100
 
-if withdrawAmount < 1 and withdrawAmount > 0:
-    print("Invalid input! Do not insert a decimal.")
+if withdrawAmount > 0:
+    print("Invalid input! Do not insert a decimal. Enter in multiples of 100 only.")
+    print('Can not provide ', str(withdrawAmount), ' Rs, which is < 100.')
+    exit()
 
 numbNotes = N1000 + N500 + N200 + N100 # total currency notes
 if N < numbNotes:
     print('Can not provide currency notes as per withdrawal limit!')
+    exit()
 
 # printing output
 print('\n You will have total ', str(numbNotes), 'currency Notes, as... \n')
