@@ -1,5 +1,5 @@
 #------------------------
-# There are some errors
+# There are some errors, but program works
 #--------------------------
 
 from math import *
