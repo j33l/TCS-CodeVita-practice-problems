@@ -31,11 +31,11 @@
 ### Example 1
 
 #### Input
-2
-polikujmnhytgbvfredcxswqaz
-abcd
-qwryupcsfoghjkldezxvbintma
-ativedoc
+>> 2
+>> polikujmnhytgbvfredcxswqaz
+>> abcd
+>> qwryupcsfoghjkldezxvbintma
+>> ativedoc
 
 #### Output
 bdca
