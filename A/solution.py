@@ -32,3 +32,4 @@ elif grid[0][1] > grid[1][0]:
     move('down')
 else: # both are equal then find which will be best move, by comparing next of next move
     
+#--------TBC-----------
