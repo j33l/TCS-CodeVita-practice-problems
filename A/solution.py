@@ -1,5 +1,6 @@
 #
 # Solution for "A Board Game"
+# Using path find algo.s, so we can find best possible solution, even at a time next move seems more valuable than other
 #
 
 import numpy as np

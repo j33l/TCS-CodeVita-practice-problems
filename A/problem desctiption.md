@@ -3,8 +3,9 @@
 --> Problem Description
 You are given an N x N grid of squares. Each square except the top left is filled with a positive integer. You start at the top
 left corner with a score of 0 and move to the bottom right square by moving either right by one square or down by one square. As
-you move to the new square, your score becomes [S/2] + k, where S was the score at your previous square and k is the number written
-in the current square. In the above, [x] is the largest integer which is not greater than x. Thus, [5] is 5, and [5.5] is also 5.
+you move to the new square, your score becomes `[S/2] + k`, where `S` was the score at your previous square and k is the number 
+written in the current square. In the above, [x] is the largest integer which is not greater than x. Thus, [5] is 5, and [5.5] is 
+also 5.
 Write a program to find the smallest score with which you can exit the grid.
 
 --> Constraints
@@ -69,4 +70,4 @@ The corresponding scores are 1, 4, 4, 7, 7, 12
 
 -> Explanation
 
-One possible set of moves are down, right, right, right, down, down, down, right
+One possible set of moves are "down, right, right, right, down, down, down, right"

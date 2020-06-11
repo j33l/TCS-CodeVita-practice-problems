@@ -34,7 +34,8 @@ if (ss + sm + sc) > 24 or (ss + sm + sc) < 1:
     exit()
 
 # total possible question paper without any constrains
-tp = ss * sm * sc # total paper possible
+# tp = ss * sm * sc # total paper possible // before, maybe incorrect
+tp = ts * tm * tc # total paper possible
 tq = ss + sm + sc # total questions per paper
 
 print('\nNumber of totoal possible question papers is: ', str(tp))
