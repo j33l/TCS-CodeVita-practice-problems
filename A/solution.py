@@ -3,34 +3,56 @@
 # Using path find algo.s, so we can find best possible solution, even at a time next move seems more valuable than other
 #
 
-import numpy as np
+from itertools import permutations, combinations, chain
 
 # input
+n = int(input('Enter grid size: '))
+grid = []
+moveList = []
 
-N = input('enter grid size: ')
+print('Enter grid values...')
+for i in range(n):
+    grid.append([int(i) for i in input().split()])
 
-print('enter grid values... \n')
-row1 = [int(i) for i in input().split()]
-row1[0] = 0 # making top-left value 0 implecitly of user input
-row2 = [int(i) for i in input().split()]
-row3 = [int(i) for i in input().split()]
+grid[0][0] = 0 # making top-left value 0 implecitly of user input
 
-grid = [row1, row2, row3]
+# generating move list
+for i in range(n - 1):
+        moveList.append('i')
+        moveList.append('j')
 
-# display grid input
+# # static input
+# grid = [[0, 1, 8, 8],
+#         [9, 9, 9, 9],
+#         [1, 9, 9, 9],
+#         [1, 1, 1, 5]]
+# grid = [[0, 1, 3, 8],
+#         [9, 4, 4, 5],
+#         [1, 6, 2, 7],
+#         [1, 1, 1, 5]]
 
-print(np.matrix(grid))
+# move variables
+possibleWays = list(set(permutations(moveList)))
+possibleWaysSum = []
 
-# finding smallest route
+print(possibleWays)
 
-s = grid[0][0] # score
+for way in possibleWays:
+        i, j, tempSum = 0, 0, 0 # down=i, right=j
 
-s = s/2 + k
+        for move in way:
+                if move == 'i':
+                        i += 1
+                else:
+                        j += 1
+                tempSum += grid[i][j]
+        
+        possibleWaysSum.append(tempSum)
 
-if grid[0][1] < grid[1][0]:
-    move('right')
-elif grid[0][1] > grid[1][0]:
-    move('down')
-else: # both are equal then find which will be best move, by comparing next of next move
-    
-#--------TBC-----------
+minWayIndex = possibleWaysSum.index(min(possibleWaysSum))
+
+for i in grid:
+        print(i)
+print('i = down, j = right')
+print('Minimum Value Path:', possibleWays[minWayIndex])
+print('Minimum value:', min(possibleWaysSum))
