@@ -31,13 +31,13 @@ nextPosition, previousPosition = 0, 0 #[0, 0], [0, 0]
 i, j = 0, 0 # row, col
 while(i != SIZE and j != SIZE): # till reached bottom right place (3, 3)
     if(boardGrid[i][j + 1] < boardGrid[i + 1][j]):
-        score = floor(score / 2) + boardGrid[i][j + 1]
         j += 1
         print('right, ', end="")
     else:
-        score = floor(score / 2) + boardGrid[i + 1][j]
         i += 1
         print('down, ', end="")
+    score = floor(score / 2) + boardGrid[i][j]
+    
 
 score = floor(score / 2) + boardGrid[SIZE][SIZE] # adding last value
 

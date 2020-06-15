@@ -3,7 +3,8 @@
 # Using path find algo.s, so we can find best possible solution, even at a time next move seems more valuable than other
 #
 
-from itertools import permutations, combinations, chain
+from itertools import permutations
+from math import floor
 
 # input
 n = int(input('Enter grid size: '))
@@ -32,10 +33,10 @@ for i in range(n - 1):
 #         [1, 1, 1, 5]]
 
 # move variables
-possibleWays = list(set(permutations(moveList)))
+possibleWays = list(set(permutations(moveList))) # converting into set to make only unique values available
 possibleWaysSum = []
 
-print(possibleWays)
+# print(possibleWays)
 
 for way in possibleWays:
         i, j, tempSum = 0, 0, 0 # down=i, right=j
@@ -45,7 +46,8 @@ for way in possibleWays:
                         i += 1
                 else:
                         j += 1
-                tempSum += grid[i][j]
+                # tempSum += grid[i][j]
+                tempSum = floor(tempSum / 2) + grid[i][j] # new sum Calculation formula as per problem description
         
         possibleWaysSum.append(tempSum)
 
