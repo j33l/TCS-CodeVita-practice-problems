@@ -2,7 +2,6 @@
 Solution for "Collision Course" problem
 '''
 
-
 import math
 from itertools import combinations
 
