@@ -28,9 +28,15 @@
 #     print(i, end=', ')
 
 
-import numpy as np
+# import numpy as np
  
-print("Print Float Range Using NumPy LinSpace()\n")
+# print("Print Float Range Using NumPy LinSpace()\n")
 
-print(np.linspace(1.00, 3.00))
-# print(np.linspace(0, 10, num = 5, endpoint = False))
+# print(np.linspace(1.00, 3.00))
+# # print(np.linspace(0, 10, num = 5, endpoint = False))
+
+
+import numpy
+
+for i in numpy.arange(1.00, 3.00, 0.10):
+    print(round(i, 6), end=', ')

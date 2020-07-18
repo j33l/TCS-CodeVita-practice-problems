@@ -3,7 +3,7 @@ Solution for "Lifeguard Prob"
 '''
 
 import math
-import numpy as np
+import numpy
 
 #
 # User input
@@ -61,7 +61,9 @@ calculating time taken by lifeguard for every case with 6 decimal points accurac
 times, xOptimumRange = [], []
 change = 0.000001 if x_drowning > x_lifeGuard else -0.000001 # based on lifeguard should run left ot right
 # xFloatValues = list(np.linspace(xStraightIntersection, float(x_drowning), change))
-xFloatValues = np.linspace(xStraightIntersection, float(x_drowning))
+xFloatValues = numpy.linspace(xStraightIntersection, float(x_drowning))
+# xFloatValues = [round(i, 6) for i in numpy.arange(xStraightIntersection, (x_drowning), change)]
+
 for xOptimum in xFloatValues:
     time = 0
     time += calcTime(lifeGuardVelocity * multiplyingFactor, calcDistance(xOptimum, x_lifeGuard, 0, y_lifeGuard)) # on ground
