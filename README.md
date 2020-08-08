@@ -1,3 +1,30 @@
+# complete
+[x] A  
+[x] A m2  
+[x] A2, *  
+
+[x] B  
+[ ] B m2  
+[x] B2  
+
+[ ] C  
+[x] C m2  
+[x] C2  
+
+[x] D  
+[ ] D m2  
+[x] D2, *  
+
+[ ] E  
+[x] E m2  
+[ ] E2  
+
+[x] F  
+[ ] F m2  
+[ ] F2  
+
+* * *
+
 # Index
 
 <details>
