@@ -5,14 +5,14 @@ Solution for "Television Sets" problem
 '''
 static user input for testing
 '''
-numberOfRooms = 20
-rateForTwoTypesOfRooms = [1500, 1000]
-targetedRevenue = 7227990
+# numberOfRooms = 20
+# rateForTwoTypesOfRooms = [1500, 1000]
+# targetedRevenue = 7227990
 
-# # User input
-# numberOfRooms = int(input('Enter number of rooms: '))
-# rateForTwoTypesOfRooms = [int(i) for i in input('Enter rate for with TV and without TV room(space seperated): ').split()]
-# targetedRevenue = int(input('Enter targeted revenue: '))
+# User input
+numberOfRooms = int(input('Enter number of rooms: '))
+rateForTwoTypesOfRooms = [int(i) for i in input('Enter rate for with TV and without TV room(space seperated): ').split()]
+targetedRevenue = int(input('Enter targeted revenue: '))
 
 '''
 A function to determine if a year is a leap year.
