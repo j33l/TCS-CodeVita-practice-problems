@@ -1,27 +1,13 @@
-# complete
-[x] A  
-[x] A m2  
-[x] A2, *  
+# TCS CodeVita 2020
 
-[x] B  
-[ ] B m2  
-[x] B2  
-
-[ ] C  
-[x] C m2  
-[x] C2  
-
-[x] D  
-[ ] D m2  
-[x] D2, *  
-
-[ ] E  
-[x] E m2  
-[ ] E2  
-
-[x] F  
-[ ] F m2  
-[ ] F2  
+| Index | Practice-1 Questions | Practice-2 Questions | MockVita-2 Questions | 
+| :---: | :---: | :---: | :---: |
+| A | A ✔ | A2 ✔ | A m2 ✔ |
+| B | B ✔ | B2 ✔ | B m2 ❌ |
+| C | C ❌ | C2 ✔ | C m2 ✔ |
+| D | D ✔ | D2 ✔ | D m2 ❌ |
+| E | E ❌ | E2 ❌ | E m2 ✔ |
+| F | F ✔ | F2 ❌ | F m2 ❌ |
 
 * * *
 
