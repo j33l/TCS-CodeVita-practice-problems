@@ -25,9 +25,9 @@ def is_leap_year(year):
 returns days in a given monthNumber based on a year is leap year or not
 '''
 def days_in_month(monthNumber, year = 0):
-    if monthNumber == 9 or monthNumber == 4 or monthNumber == 6 or monthNumber == 11:
+    if monthNumber in [9, 4, 6, 11]:
         return 30
-    elif monthNumber == 1 or monthNumber == 3 or monthNumber == 5 or monthNumber== 7 or monthNumber == 8 or monthNumber == 10 or monthNumber == 12:
+    elif monthNumber in [1, 3, 5, 7, 8, 10, 12]:
         return 31
     elif monthNumber == 2 and is_leap_year(year) == True:
         return 29
@@ -39,6 +39,7 @@ def days_in_month(monthNumber, year = 0):
 '''
 stores number of patients on every day for a year as a [[monthlyList]]
 '''
+
 numberOfPatients = []
 for month in range(1, 13): # 12 months/year
     # monthlyPatients = []
@@ -47,13 +48,14 @@ for month in range(1, 13): # 12 months/year
         numberOfPatients.append(int((6-month)**2 + ((day-15)**2)**(1/2)))
     # numberOfPatients.append(monthlyPatients)
 
-currentRevenue = 0
-
 '''
 calculating revanue if all patient takes min rate room
 '''
-for dailyPatient in numberOfPatients:
-    currentRevenue += dailyPatient * min(rateForTwoTypesOfRooms)
+currentRevenue = sum(
+    dailyPatient * min(rateForTwoTypesOfRooms)
+    for dailyPatient in numberOfPatients
+)
+
 
 minNumberOfTV = 0
 

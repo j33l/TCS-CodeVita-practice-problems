@@ -13,45 +13,31 @@ ss, sm, sc = 2, 3, 2
 tqs = ts + tm + tc # total questions available
 
 # questions indicators
-qi = [] # questions indicators
-for i in range(97, 97 + tqs):
-	qi.append(chr(i).upper())
+qi = [chr(i).upper() for i in range(97, 97 + tqs)]
 print(qi)
 
-simpleQueIndi = []
-for i in range(97, 97 + ts):
-	simpleQueIndi.append(chr(i).upper())
+simpleQueIndi = [chr(i).upper() for i in range(97, 97 + ts)]
 print(simpleQueIndi)
 
-mediumQueIndi = []
-for i in range(97 + ts, 97 + ts + tm):
-	mediumQueIndi.append(chr(i).upper())
+mediumQueIndi = [chr(i).upper() for i in range(97 + ts, 97 + ts + tm)]
 print(mediumQueIndi)
 
-complexQueIndi = []
-for i in range(97 + ts + tm, 97 + ts + tm + tc):
-	complexQueIndi.append(chr(i).upper())
+complexQueIndi = [
+    chr(i).upper() for i in range(97 + ts + tm, 97 + ts + tm + tc)
+]
 print(complexQueIndi)
-
-# all questions combinations
-aqc = []
 
 # combinations
 simpleComb = list(combinations(simpleQueIndi, ss))
-for i in simpleComb: 
-	aqc.append(i)
-	# print(i)
+# all questions combinations
+aqc = [i for i in simpleComb]
 
 mediumComb = list(combinations(mediumQueIndi, sm))
 for i in mediumComb: 
 	aqc.append(i)
-    # print(i)
-
 complexComb = list(combinations(complexQueIndi, sc))
 for i in complexComb: 
 	aqc.append(i)
-    # print(i)
-
 # print('all... \n')
 # print(aqc)
 

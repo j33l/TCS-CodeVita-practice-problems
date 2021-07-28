@@ -8,19 +8,16 @@ from math import floor
 
 # input
 n = int(input('Enter grid size: '))
-grid = []
 moveList = []
 
 print('Enter grid values...')
-for i in range(n):
-    grid.append([int(i) for i in input().split()])
-
+grid = [[int(i) for i in input().split()] for _ in range(n)]
 grid[0][0] = 0 # making top-left value 0 implecitly of user input
 
 # generating move list
-for i in range(n - 1):
-        moveList.append('i')
-        moveList.append('j')
+for _ in range(n - 1):
+    moveList.append('i')
+    moveList.append('j')
 
 # # static input
 # grid = [[0, 1, 8, 8],
@@ -48,7 +45,7 @@ for way in possibleWays:
                         j += 1
                 # tempSum += grid[i][j]
                 tempSum = floor(tempSum / 2) + grid[i][j] # new sum Calculation formula as per problem description
-        
+
         possibleWaysSum.append(tempSum)
 
 minWayIndex = possibleWaysSum.index(min(possibleWaysSum))

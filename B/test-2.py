@@ -34,9 +34,9 @@ isOnlyOne = False
 for paperItem in all:
     if (qs[0] in paperItem) and (qs[1] in paperItem):
         continue
-    if (onlyOne in paperItem) and (isOnlyOne == True):
+    if onlyOne in paperItem and isOnlyOne:
         continue
-    if (onlyOne in paperItem) and (isOnlyOne == False):
+    if onlyOne in paperItem:
         isOnlyOne = True
     finalAns.append(paperItem)
 

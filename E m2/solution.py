@@ -4,7 +4,7 @@ import string
 t = int(input())
 
 cases = []
-for n in range(t):
+for _ in range(t):
     number_of_monkies = int(input())
     pattern = [(int(i) - 1) for i in input().split()] # converting into 0 based index values
     # pattern = []
@@ -18,10 +18,7 @@ static input
 # cases = [[6, [2, 5, 4, 3, 0, 1]]] # 0 bases index val
 
 def change_position(pattern, old_position):
-    new_position = []
-    for i in range(len(pattern)):
-        new_position.append(old_position[pattern.index(i)])
-    return new_position
+    return [old_position[pattern.index(i)] for i in range(len(pattern))]
 
 for case in cases:
     n, pattern = case[0], case[1]

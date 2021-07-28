@@ -3,12 +3,13 @@ Solution for "Philaland Coin" problem
 by Smit J.
 '''
 
+
 t = int(input()) # `t` is no. of testcases
 if not 1 <= t <= 100:
     exit()
 
 all_max_prices = []
-for i in range(t):
+for _ in range(t):
     n = int(input()) # `n` is price of costliest item on island
     if not 1 <= n <= 5000:
         exit()
@@ -16,9 +17,7 @@ for i in range(t):
 
 main_sequence=[]
 for each_max in all_max_prices:
-    coin_sequence=[]
-    for k in range(1, int(each_max) + 1):
-        coin_sequence.append(k)
+    coin_sequence = [k for k in range(1, int(each_max) + 1)]
     main_sequence.append(coin_sequence)
 # print(main_sequence)
 

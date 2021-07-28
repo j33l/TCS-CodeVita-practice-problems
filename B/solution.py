@@ -43,37 +43,30 @@ print('Number of totoal  question in each papers is: ', str(tq))
 
 # printing all questions indicators
 tqs = ts + tm + tc # total questions available
-qi = [] # questions indicators
-for i in range(97, 97 + tqs):
-	qi.append(chr(i).upper())
+qi = [chr(i).upper() for i in range(97, 97 + tqs)]
 print('\nAll question indicators... \n')
 print(qi)
 
-simpleQueIndi = [] # simple questions indicators
-for i in range(97, 97 + ts):
-	simpleQueIndi.append(chr(i).upper())
+simpleQueIndi = [chr(i).upper() for i in range(97, 97 + ts)]
 print('Simple question indicators... \n')
 print(simpleQueIndi)
 
-mediumQueIndi = [] # medium questions indicators
-for i in range(97 + ts, 97 + ts + tm):
-	mediumQueIndi.append(chr(i).upper())
+mediumQueIndi = [chr(i).upper() for i in range(97 + ts, 97 + ts + tm)]
 print('Medium question indicators... \n')
 print(mediumQueIndi)
 
-complexQueIndi = [] # complex questions indicators
-for i in range(97 + ts + tm, 97 + ts + tm + tc):
-	complexQueIndi.append(chr(i).upper())
+complexQueIndi = [
+    chr(i).upper() for i in range(97 + ts + tm, 97 + ts + tm + tc)
+]
+
 print('Complex question indicators... \n')
 print(complexQueIndi)
 
-# printing possible questions pairs for papers without constrains
-aqc = [] # all questions combinations
-
 # combinations
 simpleComb = list(combinations(simpleQueIndi, ss))
-for i in simpleComb: 
-	aqc.append(i)
+# printing possible questions pairs for papers without constrains
+aqc = [i for i in simpleComb]
+
 print('Simple question combinations... \n')
 print(simpleComb)
 
@@ -116,9 +109,9 @@ isOnlyOne = False
 for paperItem in ans:
     if (qs[0] in paperItem) and (qs[1] in paperItem):
         continue
-    if (q in paperItem) and (isOnlyOne == True):
+    if q in paperItem and isOnlyOne:
         continue
-    if (q in paperItem) and (isOnlyOne == False):
+    if q in paperItem:
         isOnlyOne = True
     finalAns.append(paperItem)
 
