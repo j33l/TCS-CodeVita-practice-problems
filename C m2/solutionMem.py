@@ -25,16 +25,10 @@ for l in range(min_len, max_len + 1):
 makes a given size squre and returns number of squres, recursively
 '''
 def make_squre(size):
+    if max(size) in [1, min(size)]:
+        return 1
     temp = 0
-    if(max(size) == 1):
-        return 1
-    elif(max(size) == min(size)):
-        return 1
-    else:
-        return temp + 1 + make_squre([max(size) - min(size), min(size)])
+    return temp + 1 + make_squre([max(size) - min(size), min(size)])
 
-squre_cadbury = 0
-for size in cadbury_in_box:
-    squre_cadbury += make_squre(size)
-
+squre_cadbury = sum(make_squre(size) for size in cadbury_in_box)
 print(squre_cadbury)

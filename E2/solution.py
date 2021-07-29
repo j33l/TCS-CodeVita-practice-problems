@@ -1,6 +1,7 @@
 '''
 Solution for "Lazy Student" problem
 '''
+
 #
 # User inputs
 #
@@ -14,17 +15,22 @@ if( numberOfTestCases < 1):
 '''
 Contains three integers for "questions in question bank", "questions in paper", "questions can practice"
 '''
-testData = []
-for i in range(numberOfTestCases):
-    testData.append([int(data) for data in input('Enter "questions in question bank", "questions in paper", "questions can practice": ').split()])
-
+testData = [
+    [
+        int(data)
+        for data in input(
+            'Enter "questions in question bank", "questions in paper", "questions can practice": '
+        ).split()
+    ]
+    for _ in range(numberOfTestCases)
+]
 
 for data in testData:
     # validating data for questions
     if(data[1] > data[0] and data[2] > data[0]):
         print('Enter valid data for number of questions!')
         exit()
-    
+
     # calculating probability
     # print(data[2]*mulInv(q)) modulo 1000000007
 

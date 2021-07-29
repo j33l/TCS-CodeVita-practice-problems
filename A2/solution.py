@@ -20,8 +20,7 @@
 
 # reference : https://stackoverflow.com/questions/10035752/elegant-python-code-for-integer-partitioning
 def partition(number):
-    answer = set()
-    answer.add((number, )) # number itself
+    answer = {(number, )}
     for x in range(1, number):
         for y in partition(number - x):
             answer.add(tuple(sorted((x, ) + y)))

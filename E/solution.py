@@ -7,7 +7,7 @@ testNumb = int(input('Enter number of test cases: '))
 givenOrderArr = []
 givenStrArr = []
 
-for i in range(testNumb):
+for _ in range(testNumb):
     givenOrderArr.append(input('Enter string for the new order of letters in the English dictionary: '))
     givenStrArr.append(input('Enter string to sort by previously specified order: '))
 

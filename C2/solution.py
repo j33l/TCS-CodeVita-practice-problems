@@ -2,6 +2,7 @@
 Solution for "Collision Course" problem
 '''
 
+
 import math
 from itertools import combinations
 
@@ -11,9 +12,9 @@ N = int(input('Enter number of cars: '))
 '''
 stores list of three float values [x coordinate, y coordinate, velocity]
 '''
-carsVector = []
-for i in range(N):
-    carsVector.append([float(i) for i in input('Enter x, y and v: ').split()])
+carsVector = [
+    [float(i) for i in input('Enter x, y and v: ').split()] for _ in range(N)
+]
 
 # filtering out cars which are moving away from origin, negative velocity
 carsVector = list(filter(lambda x: (x[2] >= 0), carsVector))
@@ -52,9 +53,11 @@ def calcTime(velocity, distance):
 '''
 list of timings at which all filtered cars will be at origin
 '''
-carsTiming = []
-for carVector in carsVector:
-    carsTiming.append(calcTime(carVector[2], calcDistance(carVector[0], carVector[1])))
+
+carsTiming = [
+    calcTime(carVector[2], calcDistance(carVector[0], carVector[1]))
+    for carVector in carsVector
+]
 
 timingsCombination = list(combinations(carsTiming, 2))
 

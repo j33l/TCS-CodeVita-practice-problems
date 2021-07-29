@@ -17,7 +17,10 @@ primeNumList1 = list(primerange(n1, n2 + 1))
 print('Prime numbers : ', primeNumList1)
 
 # Generating unique combinations
-primeNumList1Permutations = list(set([int(str(i[0])+str(i[1])) for i in list(permutations(primeNumList1, 2))])) # converting into set to make only unique values available
+primeNumList1Permutations = list(
+    {int(str(i[0]) + str(i[1])) for i in list(permutations(primeNumList1, 2))}
+)
+
 
 print('Prime numbers combinations : ', primeNumList1Permutations)
 

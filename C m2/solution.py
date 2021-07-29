@@ -25,13 +25,12 @@ for l in range(min_len, max_len + 1):
 makes a given size squre and returns list of squre sizes, recursively
 '''
 def make_squre(size):
-    temp = []
-    if(max(size) == 1):
+    if (max(size) == 1):
         return [[1, 1]]
     elif(max(size) == min(size)):
         return [size]
     else:
-        temp.append([min(size), min(size)])
+        temp = [[min(size), min(size)]]
         temp += make_squre([max(size) - min(size), min(size)])
         return temp
 
